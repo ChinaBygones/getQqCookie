@@ -8,7 +8,7 @@ if(len(qq) == 0 or len(password) == 0):
 def getQzoneCookie(qq,password):
     opt = webdriver.ChromeOptions()
     opt.add_argument('--headless')
-    browser = webdriver.Chrome()
+    browser = webdriver.Chrome(chrome_options=opt)
     browser.get('http://qzone.qq.com')
     browser.switch_to_frame('login_frame')
     browser.find_element_by_id('switcher_plogin').click()
